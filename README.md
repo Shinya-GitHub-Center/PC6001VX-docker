@@ -2,10 +2,12 @@
 - This repository is made for running [PC6001VX](https://github.com/eighttails/PC6001VX) via docker container.
 - PC6001VX is made with [Qt Creator](https://www.qt.io/product/development-tools), that's why it is advisable to run the app via docker, not installing to your host computer.
 - But the running GUI app and making the audio active from the docker container is a little bit tricky, but I guess I found the solution.
-- First of all, download my source code from this repository, then go to the following procedure.
+
+## Preparation
+1. By referring to [this](https://gist.github.com/Shinya-GitHub-Center/db99219f61789b5148cdb3e70ad44f98), do the #1, #2, and #3 from your host computer.
+2. Download my source code from this repository, then unzip it and put it somewhere you like.
 
 ## Procedure
-
 1. Download the latest source code from [PC6001VX](https://github.com/eighttails/PC6001VX) repository, then unzip it followed by put the folder to `./pc6001vx/workdir/`
 2. @this project's root directory (where `docker-compose.yml` exists), run the following command.
     ```
