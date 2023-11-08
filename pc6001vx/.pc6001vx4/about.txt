@@ -1,0 +1,2 @@
+Roms, Tapes, Disks and other setting files are located in this ".pc6001vx4" folder.
+These files are not erased even after you did "docker compose down" upon finishing container.

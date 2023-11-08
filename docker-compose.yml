@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+  pc6001vx:
+    build:
+      context: ./docker/pc6001vx
+      dockerfile: Dockerfile
+    volumes:
+      - type: bind
+        source: ./pc6001vx/workdir
+        target: /home/default/workdir
+      - type: bind
+        source: ./pc6001vx/.pc6001vx4
+        target: /home/default/.pc6001vx4
+      - type: bind
+        source: /tmp/.X11-unix
+        target: /tmp/.X11-unix
+      - type: bind
+        source: /tmp/pulseaudio.socket
+        target: /tmp/pulseaudio.socket
+      - type: bind
+        source: /tmp/pulseaudio.client.conf
+        target: /etc/pulse/client.conf
+    environment:
+      - DISPLAY=${DISPLAY}
+      - PULSE_SERVER=unix:/tmp/pulseaudio.socket
+      - PULSE_COOKIE=/tmp/pulseaudio.cookie
+    user: default
+    tty: true
+    stdin_open: true
